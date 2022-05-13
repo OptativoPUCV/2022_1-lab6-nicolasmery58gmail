@@ -1,0 +1,11 @@
+Fri May 13 15:50:16 UTC 2022: 
+ sudoku.c | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
+In file included from test.c:5:0:
+sudoku.c: In function ‘is_final’:
+sudoku.c:67:27: error: ‘o’ undeclared (first use in this function)
+       if(n->sudo[i][j] == o){
+                           ^
+sudoku.c:67:27: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+1f11c0a

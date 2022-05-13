@@ -45,18 +45,37 @@ void print_node(Node* n){
 
 int is_valid(Node* n){
 
+
+  
     return 1;
 }
 
 
 List* get_adj_nodes(Node* n){
     List* list=createList();
+
+    
+  
     return list;
 }
 
 
 int is_final(Node* n){
+  int i, j, k = 1;
+  for(i = 0; i < 9; i++){
+    for(j = 0; i < 9; j++){
+      if(n->sudo[i][j] == o){
+        k = 0;
+        break;
+      }
+    }
+  }
+  if ( k == 0){
     return 0;
+  }else{
+    return 1;
+  }
+  
 }
 
 Node* DFS(Node* initial, int* cont){
