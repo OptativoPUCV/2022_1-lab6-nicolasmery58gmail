@@ -66,6 +66,7 @@ int is_final(Node* n){
     for(j = 0; i < 9; j++){
       if(n->sudo[i][j] == 0){
         k = 0;
+        break;
       }
     }
   }
