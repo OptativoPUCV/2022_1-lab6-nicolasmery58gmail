@@ -135,7 +135,7 @@ List* get_adj_nodes(Node* n){
         Node* adj=copy(n);
         int detector=estado(n,i);
         adj->sudo[i][detector]=j;
-        if(is_valid(Adj)==1)
+        if(is_valid(adj)==1)
         {
           pushBack(list,adj);
         }
