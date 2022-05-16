@@ -43,51 +43,51 @@ void print_node(Node* n){
     printf("\n");
 }
 
-int* lineaVacia()
+int* lista_0()
 {
-  int* creador=(int*)malloc(sizeof(int)*10);
+  int* list=(int*)malloc(sizeof(int)*10);
   for(int i=0;i<10;i++)
   {
-    creador[i]=0;
+    list[i]=0;
   }
-  return creador;
+  return list;
 }
 
 int is_valid(Node* n){
   int sudo;
-  int* flag;
+  int* ar;
   for(int i=0;i<9;i++)
   {
-    flag=lineaVacia();
+    ar=lista_0();
     for(int j=0;j<9;j++)
     {
       sudo=n->sudo[i][j];
       if(sudo!=0)
       {
-        if(flag[sudo]!=0)
+        if(ar[sudo]!=0)
         {
           return 0;
         }
-        flag[sudo]=1;
+        ar[sudo]=1;
       }
     }
-    flag=lineaVacia();
+    ar=lista_0();
     for(int j=0;j<9;j++)
     {
       sudo=n->sudo[j][i];
       if(sudo!=0)
       {
-        if(flag[sudo]!=0)
+        if(ar[sudo]!=0)
         {
           return 0;
         }
-        flag[sudo]=1;
+        ar[sudo]=1;
       }
     }
   }
   for(int l=0;l<9;l++)
   {
-    flag=lineaVacia();
+    ar=lista_0();
     for(int a=0;a<9;a++)
     {
       int i = 3 * (l / 3) + (a / 3);
