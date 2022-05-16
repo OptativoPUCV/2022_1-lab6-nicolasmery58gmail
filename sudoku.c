@@ -97,9 +97,9 @@ int is_valid(Node* n){
       {
         continue;
       }
-      if(flag[sudo]==0)
+      if(ar[sudo]==0)
       {
-        flag[sudo]=1;
+        ar[sudo]=1;
       }
       else
       {
