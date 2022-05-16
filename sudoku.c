@@ -44,45 +44,52 @@ void print_node(Node* n){
 }
 
 int is_valid(Node* n){
-  int i, j, k;
-  for(i = 0; i < 9; i++){
-    for(j = 0; j < 9; j++){
-      if (n->sudo[i][j]){
-        for(k = j+1; k < 9; k++ ){
-          if(n->sudo[i][j] == n->sudo[i][k]) return 0;
-        }
-      }
-    }
-  }
-  for(j = 0; j < 9; j++){
-    for(i = 0; i < 9; i++){
-      if (n->sudo[i][j]){
-        for(k = i+1; k < 9; k++ ){
-          if(n->sudo[i][j] == n->sudo[k][j]) return 0;
-        }
-      }
-    }
-  }
-  int * a = (int*)malloc(sizeof(int)*10);
-  for(int l=0;l<10;l++)
+  int sudo;
+  int* flag;
+  for(int i=0;i<9;i++)
   {
-    a[l]=0;
-  }
-  for(int o=0;o<9;o++)
-  {
-    
-    for(int m=0;m<9;m++)
+    flag=lineaVacia();
+    for(int j=0;j<9;j++)
     {
-      int i = 3 * (o / 3) + (m / 3);
-      int j = 3 * (o % 3) + (m % 3);
-      
-      if(n->sudo[i][j]==0)
+      sudo=n->sudo[i][j];
+      if(sudo!=0)
+      {
+        if(flag[sudo]!=0)
+        {
+          return 0;
+        }
+        flag[sudo]=1;
+      }
+    }
+    flag=lineaVacia();
+    for(int j=0;j<9;j++)
+    {
+      sudo=n->sudo[j][i];
+      if(sudo!=0)
+      {
+        if(flag[sudo]!=0)
+        {
+          return 0;
+        }
+        flag[sudo]=1;
+      }
+    }
+  }
+  for(int l=0;l<9;l++)
+  {
+    flag=lineaVacia();
+    for(int a=0;a<9;a++)
+    {
+      int i = 3 * (l / 3) + (a / 3);
+      int j = 3 * (l % 3) + (a % 3);
+      sudo=n->sudo[i][j];
+      if(sudo==0)
       {
         continue;
       }
-      if(a[n->sudo[i][j]]==0)
+      if(flag[sudo]==0)
       {
-        a[n->sudo[i][j]]=1;
+        flag[sudo]=1;
       }
       else
       {
@@ -90,7 +97,17 @@ int is_valid(Node* n){
       }
     }
   }
-    return 1;
+  return 1;
+}
+
+int* lineaVacia()
+{
+  int* creador=(int*)malloc(sizeof(int)*10);
+  for(int i=0;i<10;i++)
+  {
+    creador[i]=0;
+  }
+  return creador;
 }
 
 

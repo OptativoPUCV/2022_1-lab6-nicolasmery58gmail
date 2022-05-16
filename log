@@ -55,3 +55,30 @@ Mon May 16 03:30:22 UTC 2022:
  tests:  1|4
 total_score: 10/70
 cff65f6
+Mon May 16 03:32:30 UTC 2022: 
+ sudoku.c | 69 ++++++++++++++++++++++++++++++++++++++++------------------------
+ 1 file changed, 43 insertions(+), 26 deletions(-)
+In file included from test.c:5:0:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:51:10: error: implicit declaration of function ‘lineaVacia’ [-Werror=implicit-function-declaration]
+     flag=lineaVacia();
+          ^~~~~~~~~~
+sudoku.c:51:9: error: assignment makes pointer from integer without a cast [-Werror=int-conversion]
+     flag=lineaVacia();
+         ^
+sudoku.c:64:9: error: assignment makes pointer from integer without a cast [-Werror=int-conversion]
+     flag=lineaVacia();
+         ^
+sudoku.c:80:9: error: assignment makes pointer from integer without a cast [-Werror=int-conversion]
+     flag=lineaVacia();
+         ^
+sudoku.c: At top level:
+sudoku.c:103:6: error: conflicting types for ‘lineaVacia’
+ int* lineaVacia()
+      ^~~~~~~~~~
+sudoku.c:51:10: note: previous implicit declaration of ‘lineaVacia’ was here
+     flag=lineaVacia();
+          ^~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+9d7565e
