@@ -182,7 +182,7 @@ Node* DFS(Node* initial, int* cont){
       auxdata = next(adj);
     }
     free(aux);
-    *cont++;
+    cont*++;
   }
   return NULL;
 }

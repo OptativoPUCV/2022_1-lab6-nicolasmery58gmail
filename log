@@ -129,3 +129,13 @@ sudoku.c:185:5: error: value computed is not used [-Werror=unused-value]
 cc1: all warnings being treated as errors
 Compilation failed
 95ac215
+Mon May 16 03:48:35 UTC 2022: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:0:
+sudoku.c: In function ‘DFS’:
+sudoku.c:185:12: error: expected expression before ‘;’ token
+     cont*++;
+            ^
+Compilation failed
+ff1ec62
