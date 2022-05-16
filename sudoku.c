@@ -110,11 +110,11 @@ int is_valid(Node* n){
   return 1;
 }
 
-int estado(Node*n,int casilla)
+int estado(Node*n,int zona)
 {
   for(int i=0;i<9;i++)
     {
-      if(n->sudo[casilla][i]==0)
+      if(n->sudo[zona][i]==0)
       {
         return i;
       }
