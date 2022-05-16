@@ -139,3 +139,15 @@ sudoku.c:185:12: error: expected expression before ‘;’ token
             ^
 Compilation failed
 ff1ec62
+Mon May 16 03:51:47 UTC 2022: 
+ sudoku.c | 30 +++++++-----------------------
+ 1 file changed, 7 insertions(+), 23 deletions(-)
+In file included from test.c:5:0:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:138:21: error: ‘Adj’ undeclared (first use in this function); did you mean ‘adj’?
+         if(is_valid(Adj)==1)
+                     ^~~
+                     adj
+sudoku.c:138:21: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+c19c98d

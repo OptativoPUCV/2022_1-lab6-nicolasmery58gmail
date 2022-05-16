@@ -110,7 +110,7 @@ int is_valid(Node* n){
   return 1;
 }
 
-int posicionActual(Node*n,int casilla)
+int estado(Node*n,int casilla)
 {
   for(int i=0;i<9;i++)
     {
@@ -128,16 +128,16 @@ List* get_adj_nodes(Node* n){
 
     for(int i=0;i<9;i++)
   {
-    if(posicionActual(n,i)!=0)
+    if(estado(n,i)!=0)
     {
       for(int j=1;j<10;j++)
       {
-        Node* Adj=copy(n);
-        int detector=posicionActual(n,i);
-        Adj->sudo[i][detector]=j;
+        Node* adj=copy(n);
+        int detector=estado(n,i);
+        adj->sudo[i][detector]=j;
         if(is_valid(Adj)==1)
         {
-          pushBack(list,Adj);
+          pushBack(list,adj);
         }
       }
     }
@@ -167,23 +167,7 @@ int is_final(Node* n){
 }
 
 Node* DFS(Node* initial, int* cont){
-  Stack* S = createStack();
-  push(S, initial);
-  while(get_size(S) != 0){
-    Node * aux = top(S);
-    pop(S);
-    if(is_final(aux)){
-      return aux;
-    }
-    List * adj = get_adj_nodes(aux);
-    Node * auxdata = first(adj);
-    while(auxdata){
-      push(S, auxdata);
-      auxdata = next(adj);
-    }
-    free(aux);
-    cont*++;
-  }
+  
   return NULL;
 }
 
