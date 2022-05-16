@@ -63,7 +63,33 @@ int is_valid(Node* n){
       }
     }
   }
-  
+  int * a = (int*)malloc(sizeof(int)*10);
+  for(int l=0;l<10;l++)
+  {
+    a[l]=0;
+  }
+  for( l=0;l<9;l++)
+  {
+    
+    for(int m=0;m<9;m++)
+    {
+      int i = 3 * (l / 3) + (m / 3);
+      int j = 3 * (l % 3) + (m % 3);
+      
+      if(n->sudo[i][j]==0)
+      {
+        continue;
+      }
+      if(a[n->sudo[i][j]]==0)
+      {
+        a[n->sudo[i][j]]=1;
+      }
+      else
+      {
+        return 0;
+      }
+    }
+  }
     return 1;
 }
 
@@ -96,6 +122,7 @@ int is_final(Node* n){
 }
 
 Node* DFS(Node* initial, int* cont){
+  
   return NULL;
 }
 
@@ -113,3 +140,5 @@ int main( int argc, char *argv[] ){
 
   return 0;
 }*/
+
+//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

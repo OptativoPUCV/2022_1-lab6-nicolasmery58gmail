@@ -38,3 +38,14 @@ Fri May 13 16:06:36 UTC 2022:
  tests:  4|3
 total_score: 30/70
 5f4180d
+Mon May 16 03:29:12 UTC 2022: 
+ sudoku.c | 28 ++++++++++++++++++++++++++++
+ 1 file changed, 28 insertions(+)
+In file included from test.c:5:0:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:71:8: error: ‘l’ undeclared (first use in this function)
+   for( l=0;l<9;l++)
+        ^
+sudoku.c:71:8: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+23e7165
