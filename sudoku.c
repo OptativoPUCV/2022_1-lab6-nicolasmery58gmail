@@ -68,13 +68,13 @@ int is_valid(Node* n){
   {
     a[l]=0;
   }
-  for( l=0;l<9;l++)
+  for(int o=0;o<9;o++)
   {
     
     for(int m=0;m<9;m++)
     {
-      int i = 3 * (l / 3) + (m / 3);
-      int j = 3 * (l % 3) + (m % 3);
+      int i = 3 * (o / 3) + (m / 3);
+      int j = 3 * (o % 3) + (m % 3);
       
       if(n->sudo[i][j]==0)
       {
