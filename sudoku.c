@@ -43,6 +43,16 @@ void print_node(Node* n){
     printf("\n");
 }
 
+int* lineaVacia()
+{
+  int* creador=(int*)malloc(sizeof(int)*10);
+  for(int i=0;i<10;i++)
+  {
+    creador[i]=0;
+  }
+  return creador;
+}
+
 int is_valid(Node* n){
   int sudo;
   int* flag;
@@ -100,15 +110,7 @@ int is_valid(Node* n){
   return 1;
 }
 
-int* lineaVacia()
-{
-  int* creador=(int*)malloc(sizeof(int)*10);
-  for(int i=0;i<10;i++)
-  {
-    creador[i]=0;
-  }
-  return creador;
-}
+
 
 
 List* get_adj_nodes(Node* n){

@@ -82,3 +82,9 @@ sudoku.c:51:10: note: previous implicit declaration of ‘lineaVacia’ was here
 cc1: all warnings being treated as errors
 Compilation failed
 9d7565e
+Mon May 16 03:33:02 UTC 2022: 
+ sudoku.c | 20 +++++++++++---------
+ 1 file changed, 11 insertions(+), 9 deletions(-)
+ tests:  4|3
+total_score: 30/70
+b7ec89d
